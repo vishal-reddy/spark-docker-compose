@@ -118,6 +118,8 @@ services:
     image: jupyter/pyspark-notebook
     ports:
       - 8888:8888
+    networks:
+      - esnet
 
 volumes:
   esdata1:
