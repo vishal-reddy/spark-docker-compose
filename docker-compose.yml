@@ -102,6 +102,7 @@ services:
       - esdata2:/usr/share/elasticsearch/data
     networks:
       - esnet
+
   kibana:
     image: docker.elastic.co/kibana/kibana-oss:6.0.1
     environment:
@@ -113,10 +114,17 @@ services:
     networks:
       - esnet
 
+  pyspark:
+    image: jupyter/pyspark-notebook
+    ports:
+      - 8888:8888
+
 volumes:
   esdata1:
     driver: local
   esdata2:
+    driver: local
+  pyspark:
     driver: local
 
 networks:
